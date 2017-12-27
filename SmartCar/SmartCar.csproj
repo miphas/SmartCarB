@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9698120-45B0-4C32-B73D-5468F8768B15}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartCar</RootNamespace>
+    <AssemblyName>SmartCar</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="SCIP_library">
+      <HintPath>.\SCIP_library.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Nav\AlignAisle.cs" />
+    <Compile Include="Draw\DrawM.cs" />
+    <Compile Include="Draw\DrawFormat.cs" />
+    <Compile Include="Info\Info.cs" />
+    <Compile Include="Info\InfoManager.cs" />
+    <Compile Include="Nav\Backward.cs" />
+    <Compile Include="Info\Part\CarInfo.cs" />
+    <Compile Include="Info\Part\PortInfo.cs" />
+    <Compile Include="STA\SCOM.cs" />
+    <Compile Include="STA\SPAM.cs" />
+    <Compile Include="Thread\ControlMethod.cs" />
+    <Compile Include="CorrPos\CorrectPosition.cs" />
+    <Compile Include="CorrPos\ICorrectPosition.cs" />
+    <Compile Include="Thread\DisplayMethod.cs" />
+    <Compile Include="Draw\DrawPolygon.cs" />
+    <Compile Include="Form_EditTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EditTool.Designer.cs">
+      <DependentUpon>Form_EditTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nav\GoWithSonic.cs" />
+    <Compile Include="Info\Part\MoveInfo.cs" />
+    <Compile Include="Nav\Navigation.cs" />
+    <Compile Include="Port\PortManager.cs" />
+    <Compile Include="Nav\Forward.cs" />
+    <Compile Include="Port\ConPort\ConPort.cs" />
+    <Compile Include="Port\DrPort\DrPort.cs" />
+    <Compile Include="Draw\DrawPath.cs" />
+    <Compile Include="Process\ProcessCurMap.cs" />
+    <Compile Include="Process\ProcessSeg.cs" />
+    <Compile Include="Map\Elem\Segment.cs" />
+    <Compile Include="Map\Elem\SimPoint.cs" />
+    <Compile Include="Thread\ThreadManager.cs" />
+    <Compile Include="Info\Part\UrgInfo.cs" />
+    <Compile Include="Util\FilenameUtil.cs" />
+    <Compile Include="Map\MapFile.cs" />
+    <Compile Include="Map\MapInfo.cs" />
+    <Compile Include="Map\MapModel.cs" />
+    <Compile Include="Port\ConPort\IConPort.cs" />
+    <Compile Include="Port\DrPort\IDrPort.cs" />
+    <Compile Include="Data\DataArea.cs" />
+    <Compile Include="FileSys\Dir\DirUtil.cs" />
+    <Compile Include="Info\FileInfo.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Guide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Guide.Designer.cs">
+      <DependentUpon>Form_Guide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Param.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Param.Designer.cs">
+      <DependentUpon>Form_Param.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Path.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Path.Designer.cs">
+      <DependentUpon>Form_Path.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileSys\Dir\IDirUtil.cs" />
+    <Compile Include="Port\IPort.cs" />
+    <Compile Include="Port\UrgPort\IUrgPort.cs" />
+    <Compile Include="Info\Model\IModel.cs" />
+    <Compile Include="Info\InfoFile.cs" />
+    <Compile Include="FileSys\XML\IXmlFile.cs" />
+    <Compile Include="Info\InfoModel.cs" />
+    <Compile Include="Map\Elem\KeyPoint.cs" />
+    <Compile Include="Port\UrgPort\UrgPort.cs" />
+    <Compile Include="Process\ProcessNewMap.cs" />
+    <Compile Include="Process\ProcessRoute.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Port\ConPort\SonicModel.cs" />
+    <Compile Include="Port\UrgPort\UrgModel.cs" />
+    <Compile Include="Util\SearchUtil.cs" />
+    <Compile Include="Info\Model\StrModel.cs" />
+    <Compile Include="FileSys\XML\XmlFile.cs" />
+    <Compile Include="Util\ValSet.cs" />
+    <Compile Include="Info\Part\WayInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_EditTool.resx">
+      <DependentUpon>Form_EditTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Guide.resx">
+      <DependentUpon>Form_Guide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Param.resx">
+      <DependentUpon>Form_Param.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Path.resx">
+      <DependentUpon>Form_Path.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resource\arrows_switch_vertical_29.88679245283px_1182588_easyicon.net.png" />
+    <Content Include="resource\arrow_29.828571428571px_1199165_easyicon.net.png" />
+    <Content Include="resource\arrow_down_alt_32px_1119760_easyicon.net.png" />
+    <Content Include="resource\arrow_up_41.230769230769px_1157557_easyicon.net.png" />
+    <Content Include="resource\arrow_up_82.461538461538px_1157557_easyicon.net.png" />
+    <Content Include="resource\car_30.12px_1151334_easyicon.net.png" />
+    <Content Include="resource\car_32px_1170086_easyicon.net.png" />
+    <Content Include="resource\car_40.16px_1151334_easyicon.net.png" />
+    <Content Include="resource\circle_empty_48px_1143357_easyicon.net.png" />
+    <Content Include="resource\circle_empty_72px_1143357_easyicon.net.png" />
+    <Content Include="resource\circle_slelected_48px_1143358_easyicon.net.png" />
+    <Content Include="resource\circle_slelected_72px_1143358_easyicon.net.png" />
+    <Content Include="resource\cursor_48px_1170259_easyicon.net.png" />
+    <Content Include="resource\mouse_44.33734939759px_1153948_easyicon.net.png" />
+    <Content Include="resource\pause_player_72px_15410_easyicon.net.png" />
+    <Content Include="resource\player_stop_72px_33504_easyicon.net.png" />
+    <Content Include="resource\play_player_72px_15907_easyicon.net.png" />
+    <Content Include="resource\return_40.695652173913px_1157313_easyicon.net.png" />
+    <Content Include="resource\steering_wheel_32px_1119907_easyicon.net.png" />
+    <Content Include="resource\switch_48px_1158247_easyicon.net.ico" />
+    <Content Include="resource\switch_70.222222222222px_1158247_easyicon.net.png" />
+    <Content Include="resource\undo_48px_1170302_easyicon.net.png" />
+    <Content Include="resource\usb_19.298126064736px_1206462_easyicon.net.png" />
+    <Content Include="resource\usb_connector_32px_1168711_easyicon.net.png" />
+    <None Include="resource\settings_72px_1107918_easyicon.net.png" />
+    <None Include="resource\google_maps_72px_1107939_easyicon.net.png" />
+    <None Include="resource\google_maps_driveabout_DestinationActivity_72px_1107941_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

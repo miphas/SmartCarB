@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Information>
+  <point>
+    <roadpoint1>
+      <id>0</id>
+      <x>0</x>
+      <y>0</y>
+      <w>0</w>
+      <type>0</type>
+      <Can_Adj>0</Can_Adj>
+      <UrgK>0</UrgK>
+      <UrgB>0</UrgB>
+      <wayType>0</wayType>
+      <disWay>0</disWay>
+      <moveBack>False</moveBack>
+    </roadpoint1>
+    <roadpoint2>
+      <id>0</id>
+      <x>1</x>
+      <y>1</y>
+      <w>0</w>
+      <type>0</type>
+      <Can_Adj>0</Can_Adj>
+      <UrgK>0</UrgK>
+      <UrgB>0</UrgB>
+      <wayType>0</wayType>
+      <disWay>0</disWay>
+      <moveBack>False</moveBack>
+    </roadpoint2>
+  </point>
+  <seg />
+</Information>
