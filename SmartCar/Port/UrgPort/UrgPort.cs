@@ -176,7 +176,8 @@ namespace SmartCar
                 if (!portDataReceived()) { config.IsSetting = false; continue; }
 
                 // 滤波
-                UrgFilter();
+                // experiment恢复原始数据
+                // UrgFilter();
 
                 // 设置完毕
                 config.IsSetting = true;

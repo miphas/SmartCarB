@@ -153,7 +153,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelShow.Location = new System.Drawing.Point(0, 31);
             this.panelShow.Name = "panelShow";
-            this.panelShow.Size = new System.Drawing.Size(784, 508);
+            this.panelShow.Size = new System.Drawing.Size(784, 500);
             this.panelShow.TabIndex = 1;
             this.panelShow.Resize += new System.EventHandler(this.panelShow_Resize);
             // 
