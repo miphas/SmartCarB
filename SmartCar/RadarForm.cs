@@ -13,11 +13,11 @@ namespace SmartCar
 {
     public partial class RadarForm : Form
     {
+        public static bool record = false;
         public RadarForm()
         {
             InitializeComponent();
 
-            //timerMethod += new timerDel()
         }
 
         private System.Timers.Timer timer = new System.Timers.Timer();
@@ -33,6 +33,7 @@ namespace SmartCar
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
+            record = true;
             //throw new NotImplementedException();
             List<long> data = PortManager.urgPort.getUrgData().Distance;
 
@@ -41,6 +42,7 @@ namespace SmartCar
 
         private void button2_Click(object sender, EventArgs e)
         {
+            record = false;
             PortManager.urgPort.closePort();
 
             timer.Close();

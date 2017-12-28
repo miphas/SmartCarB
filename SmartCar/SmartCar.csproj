@@ -95,6 +95,7 @@
     <Compile Include="Map\Elem\SimPoint.cs" />
     <Compile Include="Thread\ThreadManager.cs" />
     <Compile Include="Info\Part\UrgInfo.cs" />
+    <Compile Include="Util\ExpData.cs" />
     <Compile Include="Util\FilenameUtil.cs" />
     <Compile Include="Map\MapFile.cs" />
     <Compile Include="Map\MapInfo.cs" />

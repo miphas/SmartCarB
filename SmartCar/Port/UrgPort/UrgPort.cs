@@ -160,6 +160,7 @@ namespace SmartCar
 
         private void RefreshUrgData()
         {
+            Util.ExpData.createFile();
             while (true)
             {
                 // 如果串口关闭，则线程结束
@@ -169,8 +170,8 @@ namespace SmartCar
                 // 外部要求关闭线程
                 if (config.TH_cmd_abort) { config.TH_urg.Abort(); config.TH_cmd_abort = false; return; }
 
-                // 延时
-                System.Threading.Thread.Sleep(100);
+                // 延时 （无需延时，否则周期接近200ms）
+                // System.Threading.Thread.Sleep(100);
                 
                 // 收取数据
                 if (!portDataReceived()) { config.IsSetting = false; continue; }
@@ -178,6 +179,9 @@ namespace SmartCar
                 // 滤波
                 // experiment恢复原始数据
                 // UrgFilter();
+                // 
+                // Console.WriteLine(Environment.TickCount);
+                Util.ExpData.writeData(config.Receive, 1, 2, 3);
 
                 // 设置完毕
                 config.IsSetting = true;
