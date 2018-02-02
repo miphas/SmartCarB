@@ -181,7 +181,8 @@ namespace SmartCar
                 // UrgFilter();
                 // 
                 // Console.WriteLine(Environment.TickCount);
-                Util.ExpData.writeData(config.Receive, 1, 2, 3);
+                var posi =  PortManager.drPort.getPosition();
+                Util.ExpData.writeData(config.Receive, posi.x, posi.y, posi.w);
 
                 // 设置完毕
                 config.IsSetting = true;

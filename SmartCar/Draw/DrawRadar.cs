@@ -26,8 +26,8 @@ namespace SmartCar.Draw
         private Pen penStyle = Pens.Black;
         private Color color = Color.Black;
         // 绘图起始数据点、结束数据点
-        private int start = 88;//RadarINFO.filtStart;
-        private int end = 640;// RadarINFO.filtEnd; 640
+        private int start = 85;// 88;
+        private int end = 596;// 640
         // 画图的起始点和终点
         private double[] angs;
         // 设置字体
@@ -89,7 +89,7 @@ namespace SmartCar.Draw
             this.angs = new double[end];
             for (int i = start; i < end; ++i)
             {
-                angs[i] = ((i - start) / (double)510) * Math.PI - 0;
+                angs[i] = ((i - start) / (double)512) * Math.PI - 0;
             }
         }
 
@@ -135,6 +135,12 @@ namespace SmartCar.Draw
             int posW = this.width - interval;
             g.DrawString("1m", font, Brushes.Black, posW - g.MeasureString(tag, font).Width / 2 - meterLen / 2, posH - interval);
             g.DrawLine(penStyle, posW - meterLen, posH, posW, posH);
+
+            // 绘制标准线
+            int above = (int)(1200 * this.rate * enlarge);
+            int alens = (int)(3000 * this.rate * enlarge);
+            g.DrawLine(penStyle, halfWidth - alens / 2, halfHeight - above,
+                                 halfWidth + alens / 2, halfHeight - above);
             // 图片标题
             g.DrawString(tittle, font, Brushes.Black, halfWidth - g.MeasureString(tittle, font).Width / 2, interval);
             return img;
